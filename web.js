@@ -12,6 +12,7 @@ app.get('/hello/:name', function(request, response) {
 
 
 app.get('/data.json', function(request, response) {
+  response.header('Access-Control-Allow-Origin', '*');
   response.json({hello: 'Hi there.'});
 });
 
