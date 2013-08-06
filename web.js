@@ -6,8 +6,13 @@ app.get('/', function(request, response) {
   response.send('Hello World!');
 });
 
-app.get('/:name', function(request, response) {
+app.get('/hello/:name', function(request, response) {
   response.send('Hello '+request.params.name+'!');
+});
+
+
+app.get('/data.json', function(request, response) {
+  response.json({hello: 'Hi there.'});
 });
 
 var port = process.env.PORT || 5000;
